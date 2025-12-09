@@ -7,10 +7,8 @@ export const createMatchesRouter = () => {
   const matchesController = new MatchesController()
 
   // Aquí sí va el método correcto:
-  MatchesRouter.get(
-    '/',
-    matchesController.getMatches
-  )
+  MatchesRouter.get('/', matchesController.getMatches)
+  MatchesRouter.get('/test', matchesController.run)
 
   return MatchesRouter
 }
