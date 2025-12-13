@@ -13,6 +13,8 @@ export const getMatches = async (fecha, checks) => {
       body: JSON.stringify(actionData)
     });
 
+    console.log(response)
+
     if (!response.ok) {
       throw new Error(`Error ${response.status}: ${response.statusText}`);
     }
