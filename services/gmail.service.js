@@ -13,6 +13,11 @@ export const sendMatchesEmail = async (toEmail) => {
     // Obtener los partidos
     const data = await getMatches(fecha, env.CHECKS);
 
+    if (!data || data.length === 0) {
+        console.log("No hay partidos, no se envía email");
+        return;
+    }
+
     if (data.result){
         // Extraer año, mes y día
         const ano = fecha.slice(0, 4);
