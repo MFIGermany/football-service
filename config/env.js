@@ -31,6 +31,9 @@ const env = {
     CHECKS:process.env.CHECKS,
     GMAIL_USER:process.env.GMAIL_USER,
     GMAIL_PASS:process.env.GMAIL_PASS,
+    GMAIL_CLIENT_ID:process.env.GMAIL_CLIENT_ID,
+    GMAIL_CLIENT_SECRET:process.env.GMAIL_CLIENT_SECRET,
+    GMAIL_REFRESH_TOKEN:process.env.GMAIL_REFRESH_TOKEN,
 
 
     APP_BASE_URL: process.env.APP_BASE_URL || 'http://localhost:3002',
