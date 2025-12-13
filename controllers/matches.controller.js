@@ -14,10 +14,17 @@ export class MatchesController {
         console.log(partidos);
     }
 
-    run = async () => {
+    run = async (req, res) => {
         const emails = ["yvanega@gmail.com"]; // tu correo , "lbetancourtoliva@gmail.com"
-        emails.forEach((email) => {
-            sendMatchesEmail(email);
-        })
+        try {
+            emails.forEach((email) => {
+                sendMatchesEmail(email);
+            })
+            res.json({ status: "ok", message: "Correos enviados" })
+        } 
+        catch (e) {
+            console.error("Error:", e);
+            res.status(500).json({ status: "error", message: e.message })
+        }
     }
 }
